@@ -37,8 +37,8 @@
 
 import { fetchBaseQuery } from "@reduxjs/toolkit/query";
 import { logOut, setCredentials } from "../auth/authSlice";
-import { authTypes } from "../../services/predefine.config";
 import { decryptData } from "../../libs/crypto";
+import { authTypes } from "../config";
 
 // Base query 1: Handles refresh token and access token logic
 const baseQueryWithReauth =

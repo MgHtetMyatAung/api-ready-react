@@ -1,21 +1,15 @@
 import { useEffect } from "react";
-import { currencyApi, productApi } from "./services/api.export";
+import { productApi } from "./services/api.export";
 import { setCredentials } from "./app/auth/authSlice";
 import { useDispatch } from "react-redux";
-import useAuth from "./hooks/auth/useAuth";
 
 export default function App() {
   const dispatch = useDispatch();
   const { data, isLoading } = productApi.useGetProductsQuery({
     categoryId: "cat_4WJvlKXD7wbYV1",
   });
-  const { user, token } = useAuth();
-  const { data: currencies } = currencyApi.useGetCurrenciesQuery({
-    access_key: import.meta.env.VITE_APP_SECRET_KEY,
-  });
+
   console.log(data);
-  console.log(currencies);
-  console.log(user, token, "ddd");
 
   useEffect(() => {
     if (!isLoading) {

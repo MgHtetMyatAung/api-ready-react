@@ -1,4 +1,4 @@
-import { authTypes, baseUrls } from "../predefine.config";
+import { authTypes, baseUrls } from "../../app/config";
 
 export const user_endpoint = {
   title: "user",
